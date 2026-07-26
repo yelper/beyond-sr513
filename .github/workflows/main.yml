@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - main
+name: 🚀 Publish Website
+jobs:
+  deploy_website:
+    name: 🎉 Deploy the darned thing
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: ⬢ Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
+    - name: ⚒ Install and build
+      run: |
+        npm install
+        npm run build
+    - name: 📂 Sync files
+      uses: yelper/FTP-Deploy-Action@master
+      with:
+        protocol: ftps
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./_site/
