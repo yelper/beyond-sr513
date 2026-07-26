@@ -1,0 +1,25 @@
+{
+  "name": "beyond-sr513",
+  "version": "1.0.0",
+  "description": "advocacy site for improving Sand Point Way in Seattle",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yelper/beyond-sr513.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yelper/beyond-sr513/issues"
+  },
+  "homepage": "https://github.com/yelper/beyond-sr513#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
