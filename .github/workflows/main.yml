@@ -7,6 +7,8 @@ jobs:
   deploy_website:
     name: 🎉 Deploy the darned thing
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
     - uses: actions/checkout@master
     - name: ⬢ Set up Node.js
